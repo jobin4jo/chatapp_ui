@@ -1,0 +1,13 @@
+.container {
+  max-width: 400px;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 20px;
+  }
+}
