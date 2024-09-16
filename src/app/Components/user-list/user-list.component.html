@@ -1,1 +1,21 @@
-<p>user-list works!</p>
+<div class="chat-container">
+    <div class="row">
+        <div class="card ">
+            <div class="col-12">
+                <ul class="list-group">
+                    <li *ngFor="let user of users"
+                        class="list-group-item d-flex justify-content-between align-items-center"
+                        (click)="openUserDetails(user)">
+                        <div class="user-info" [ngClass]="{'online': user.isOnline, 'offline': !user.isOnline}">
+                            <span class="status-indicator"
+                                [ngClass]="{'online': user.isOnline, 'offline': !user.isOnline}"></span>
+                            <h5>{{ user.userName }}</h5>
+                            <small>{{ user.isOnline ? 'Online' : 'Offline' }}</small>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

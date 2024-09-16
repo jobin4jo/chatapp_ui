@@ -1,0 +1,87 @@
+/* Base styles for user info */
+.user-info h5 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.user-info small {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Ensure list items are padded correctly on mobile */
+.list-group-item {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+/* Adjust badge style for mobile */
+.badge-pill {
+  font-size: 12px;
+  padding: 0.25em 0.4em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .user-info h5 {
+    font-size: 14px;
+  }
+
+  .user-info small {
+    font-size: 12px;
+  }
+
+  .badge-pill {
+    font-size: 10px;
+    padding: 0.2em 0.3em;
+  }
+}
+.list-group-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin: 10px;
+}
+/* Style for online users */
+.user-info.online h5 {
+  color: green;
+}
+
+.user-info.online small {
+  color: green;
+}
+
+/* Style for offline users */
+.user-info.offline h5 {
+  color: gray;
+}
+
+.user-info.offline small {
+  color: gray;
+}
+
+/* Optional: Add a status indicator (e.g., a colored dot) */
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-indicator.online {
+  background-color: green;
+}
+
+.status-indicator.offline {
+  background-color: gray;
+}
