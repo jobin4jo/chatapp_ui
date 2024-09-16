@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignalRServiceService } from '../../../Services/signal-rservice.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class LoginComponent implements OnInit {
   profileForm!: FormGroup;
-  constructor(private login: LoginService, private builder: FormBuilder, private router: Router, private toast: ToastrService) {
+  constructor(private login: LoginService, private builder: FormBuilder, private router: Router, private signalR: SignalRServiceService) {
 
   }
   ngOnInit(): void {
@@ -24,20 +25,22 @@ export class LoginComponent implements OnInit {
   }
   onsubmit() {
     if (this.profileForm.valid) {
-
       this.login.UserLogin(this.profileForm.value).subscribe((res: any) => {
         if (res.code == 200) {
           console.log(res.data)
-
+          this.signalR.login(res.data.userName);
+          this.router.navigate(['/list'], { queryParams: { id: res.data.id } });
+          localStorage.setItem("user", JSON.stringify(res.data));
         }
       })
+
     }
   }
 
   onformLoad(): void {
     this.profileForm = this.builder.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.maxLength(4)]]
+      password: ['', [Validators.required, Validators.maxLength(10)]]
     })
   }
   get controls() {

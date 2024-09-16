@@ -1,0 +1,69 @@
+.payment-success-container {
+  text-align: center;
+  padding: 40px;
+  background-color: #f7f8fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.success-icon img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.transaction-details {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.transaction-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-details li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.transaction-details li strong {
+  font-weight: bold;
+}
+
+.action-buttons {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #0056b3;
+}

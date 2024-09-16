@@ -1,0 +1,48 @@
+.payment-failure-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.failure-icon {
+  font-size: 80px;
+  color: #e74c3c;
+}
+
+.failure-message {
+  font-size: 24px;
+  color: #e74c3c;
+  margin: 15px 0;
+}
+
+.error-details {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.action-buttons .btn-primary {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.action-buttons .btn-secondary {
+  background-color: #95a5a6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  opacity: 0.9;
+}

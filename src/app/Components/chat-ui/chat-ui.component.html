@@ -1,1 +1,21 @@
-<p>chat-ui works!</p>
+<div class="chat-container">
+    <div class="messages">
+        <div *ngFor="let msg of messages"
+            [ngClass]="{'sent-message': msg.user === receiverUserName, 'received-message': msg.user !== receiverUserName}">
+            <strong>{{ msg.user }}:</strong> {{ msg.message }}
+        </div>
+    </div>
+    <div class="message-input">
+        <input type="text" [(ngModel)]="message" placeholder="Type a message..." (keyup.enter)="sendMessage()">
+        <button (click)="sendMessage()">Send</button>
+        <button (click)="openPaymentModal()">Pay</button>
+    </div>
+</div>
+<div class="modal" *ngIf="isPaymentModalOpen" (click)="closePaymentModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close" (click)="closePaymentModal()"></span>
+        <h3>Enter Amount</h3>
+        <input class="form-control" type="number" [(ngModel)]="paymentAmount" placeholder="Enter amount" min="1">
+        <button class="btn btn-primary" [disabled]="!isValidAmount()" (click)="payment()">Confirm Payment</button>
+    </div>
+</div>
